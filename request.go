@@ -46,6 +46,11 @@ func (r *Request) PathParameters() map[string]string {
 	return r.pathParameters
 }
 
+// AddPathParameter adds a Path parameter value.
+func (r *Request) AddPathParameter(name, value string) {
+	r.pathParameters[name] = value
+}
+
 // QueryParameter returns the (first) Query parameter value by its name
 func (r *Request) QueryParameter(name string) string {
 	return r.Request.FormValue(name)
